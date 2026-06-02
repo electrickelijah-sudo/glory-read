@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#0a0a2a"/>
+      <stop offset="100%" stop-color="#1a0620"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd866"/>
+      <stop offset="100%" stop-color="#ffaa22"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg)"/>
+
+  <!-- Stars -->
+  <circle cx="32" cy="40" r="1.5" fill="rgba(255,216,102,.3)"/>
+  <circle cx="210" cy="52" r="2" fill="rgba(255,216,102,.4)"/>
+  <circle cx="45" cy="190" r="1" fill="rgba(255,216,102,.2)"/>
+  <circle cx="220" cy="200" r="1.5" fill="rgba(255,216,102,.3)"/>
+  <circle cx="180" cy="35" r="1" fill="rgba(255,255,255,.2)"/>
+
+  <!-- Letter G -->
+  <g transform="translate(128,115)">
+    <text text-anchor="middle" dominant-baseline="central"
+          font-family="system-ui,-apple-system,sans-serif"
+          font-weight="700" font-size="100"
+          fill="url(#gold)">G</text>
+  </g>
+
+  <!-- Star on top -->
+  <g transform="translate(128,42)">
+    <polygon points="0,-12 3.5,-4 12,-4 5,2 7,10 0,6 -7,10 -5,2 -12,-4 -3.5,-4"
+             fill="#ffd866" opacity=".9"/>
+    <polygon points="0,-7 2,-2.5 6.5,-2.5 3,1 4,5.5 0,3.5 -4,5.5 -3,1 -6.5,-2.5 -2,-2.5"
+             fill="#ffaa22" opacity=".6"/>
+  </g>
+
+  <!-- Small decorative dots -->
+  <circle cx="65" cy="128" r="3" fill="rgba(255,75,110,.5)"/>
+  <circle cx="191" cy="128" r="3" fill="rgba(255,75,110,.5)"/>
+  <circle cx="128" cy="188" r="2" fill="rgba(255,216,102,.2)"/>
+</svg>
