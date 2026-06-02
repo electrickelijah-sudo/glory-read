@@ -283,19 +283,19 @@ let groupColor = PALETTE[0];
 // ─── Story Data ────────────────────────────────────────────
 const STORY_WORDS = [
   "Glory", "built", "a", "rocket", "ship", "from", "cardboard", "boxes",
-  "and", "tape", "She", "climbed", "inside", "and", "counted", "down",
-  "Three", "two", "one", "blast", "off", "The", "rocket", "zoomed",
+  "and", "tape.", "She", "climbed", "inside", "and", "counted", "down.",
+  "Three,", "two,", "one,", "blast", "off!", "The", "rocket", "zoomed",
   "past", "the", "moon", "and", "into", "a", "sea", "of", "twinkling",
-  "stars", "A", "friendly", "alien", "waved", "from", "a", "purple",
-  "planet", "Hello", "said", "the", "alien", "Do", "you", "want", "to",
-  "play", "Glory", "smiled", "and", "nodded", "They", "played", "hide",
+  "stars.", "A", "friendly", "alien", "waved", "from", "a", "purple",
+  "planet.", "Hello,", "said", "the", "alien.", "Do", "you", "want", "to",
+  "play?", "Glory", "smiled", "and", "nodded.", "They", "played", "hide",
   "and", "seek", "among", "the", "craters", "and", "had", "a", "picnic",
   "of", "moon", "cheese", "and", "star", "cookies", "When", "it", "was",
-  "time", "to", "go", "home", "the", "alien", "gave", "Glory", "a",
-  "glowing", "star", "as", "a", "gift", "Come", "back", "soon", "the",
-  "alien", "said", "Glory", "flew", "her", "rocket", "home", "and",
+  "time", "to", "go", "home,", "the", "alien", "gave", "Glory", "a",
+  "glowing", "star", "as", "a", "gift.", "Come", "back", "soon,", "the",
+  "alien", "said.", "Glory", "flew", "her", "rocket", "home", "and",
   "climbed", "into", "bed", "holding", "her", "glowing", "star", "tight",
-  "What", "a", "wonderful", "adventure"
+  "What", "a", "wonderful", "adventure."
 ];
 
 // ─── Mode ──────────────────────────────────────────────────
@@ -305,7 +305,7 @@ let mode = 'phonics'; // 'phonics' | 'story'
 let WPG = 4;
 const FI = 1.2, HOLD = 5, FO = 1.5, GAP = .5;
 const CYCLE = FI + HOLD + FO + GAP;
-const SFI = .2, SHOLD = .7, SFO = .2, SGAP = .05;
+const SFI = .35, SHOLD = 1.8, SFO = .35, SGAP = .18;
 const SCYCLE = SFI + SHOLD + SFO + SGAP;
 
 let wordData = [];
@@ -407,11 +407,17 @@ function createWord(text, sound) {
 
     wg.userData.mats = mats;
     wg.userData.redMat = redMat;
-    wg.userData.plateTexture = plateTexture;
   }
 
   wg.position.set(0, 0, 0);
   ws = performance.now() / 1000;
+}
+
+function storyDelayForWord(word) {
+  if (mode !== 'story') return 0;
+  if (/[.!?]$/.test(word)) return .55;
+  if (/[,;:]$/.test(word)) return .25;
+  return 0;
 }
 
 function advanceWord() {
@@ -422,12 +428,17 @@ function advanceWord() {
     pickGroup();
   }
   createWord(gw[wi], wordData[gi].sound);
+  updateProgress();
+}
+
+function updateProgress() {
   const total = wordData.reduce((s, g) => s + Math.min(WPG, g.words.length), 0);
   document.getElementById('progress').textContent =
     String((gi * WPG + wi) % total + 1).padStart(2, '0');
 }
 
-function toggleMode() {
+function toggleMode(e) {
+  e?.stopPropagation();
   disposeWord();
   if (mode === 'phonics') {
     mode = 'story';
@@ -443,13 +454,23 @@ function toggleMode() {
   gi = 0;
   pickGroup();
   createWord(gw[0], wordData[gi].sound);
-  document.getElementById('progress').textContent = '01';
+  updateProgress();
 }
 
 document.getElementById('mode-btn').addEventListener('click', toggleMode);
 
-window.addEventListener('click', advanceWord);
-window.addEventListener('touchstart', e => { e.preventDefault(); advanceWord(); });
+let lastTouchAdvance = 0;
+window.addEventListener('click', e => {
+  if (e.target.closest('#mode-btn')) return;
+  if (performance.now() - lastTouchAdvance < 700) return;
+  advanceWord();
+});
+window.addEventListener('touchstart', e => {
+  if (e.target.closest('#mode-btn')) return;
+  e.preventDefault();
+  lastTouchAdvance = performance.now();
+  advanceWord();
+}, { passive: false });
 
 // ─── Load ────────────────────────────────────────────────
 let dl = false, fl = false;
@@ -460,8 +481,7 @@ function start() {
   if (el) { el.style.opacity = '0'; setTimeout(() => el.remove(), 1500); }
   pickGroup();
   createWord(gw[0], wordData[gi].sound);
-  const total = wordData.reduce((s, g) => s + Math.min(WPG, g.words.length), 0);
-  document.getElementById('progress').textContent = '01';
+  updateProgress();
 }
 
 wordData = shuffle(__WORDS); dl = true; if (fl) start();
@@ -552,7 +572,7 @@ function animate() {
   // ── Word ──
   if (wg && ready) {
     const isSt = mode === 'story';
-    const cyc = isSt ? SCYCLE : CYCLE;
+    const cyc = (isSt ? SCYCLE : CYCLE) + storyDelayForWord(gw[wi] || '');
     const fi = isSt ? SFI : FI;
     const hold = isSt ? SHOLD : HOLD;
     const fo = isSt ? SFO : FO;
@@ -598,7 +618,7 @@ function animate() {
   // ── Sound label ──
   if (wg && ready) {
     const isSt = mode === 'story';
-    const cyc = isSt ? SCYCLE : CYCLE;
+    const cyc = (isSt ? SCYCLE : CYCLE) + storyDelayForWord(gw[wi] || '');
     const fi = isSt ? SFI : FI;
     const hold = isSt ? SHOLD : HOLD;
     const fo = isSt ? SFO : FO;
