@@ -325,7 +325,7 @@ function shuffle(a) {
 function pickGroup() {
   const g = wordData[gi];
   groupColor = PALETTE[gi % PALETTE.length];
-  gw = shuffle(g.words).slice(0, WPG);
+  gw = mode === 'story' ? [...g.words] : shuffle(g.words).slice(0, WPG);
   wi = 0;
 }
 
