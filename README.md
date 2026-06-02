@@ -2,11 +2,11 @@
   <img src="logo.svg" width="120" alt="Glory Read Logo">
   <h1 align="center" style="margin-top:16px">Glory Read</h1>
   <p align="center" style="color:#888;font-size:16px;margin-bottom:24px">
-    3D sight word explorer for early readers
+    Cinematic 3D word explorer for modern early readers
   </p>
 
   <p>
-    <img src="https://img.shields.io/badge/words-1,849-ffd866?style=flat-square&labelColor=0a0a2a" alt="1,849 words">
+    <img src="https://img.shields.io/badge/words-694-ffd866?style=flat-square&labelColor=0a0a2a" alt="694 words">
     <img src="https://img.shields.io/badge/sound%20groups-55-ff4b6e?style=flat-square&labelColor=0a0a2a" alt="55 sound groups">
     <img src="https://img.shields.io/badge/3D-Three.js-ffd866?style=flat-square&labelColor=0a0a2a" alt="Three.js 3D">
     <img src="https://img.shields.io/badge/ages-4–7-ffd866?style=flat-square&labelColor=0a0a2a" alt="Ages 4-7">
@@ -16,7 +16,7 @@
 
 <br>
 
-A beautifully crafted 3D reading app that helps early readers build phonics skills through immersive, Star Wars–inspired word exploration. Each word appears as glowing 3D text against a starfield, with the target sound pattern highlighted in red so children can visually map letters to sounds.
+A beautifully crafted 3D reading app that helps early readers build phonics skills through immersive, storybook-space word exploration. Each word appears as polished glowing 3D text on a soft aurora background, with the target sound pattern highlighted so children can visually map letters to sounds. The word bank has been refreshed with 2026-friendly words children actually encounter: apps, robots, screens, games, feelings, school, friends, snacks, sports, and creative play.
 
 <br>
 
@@ -35,11 +35,11 @@ Open [`preview.html`](preview.html) in any modern browser — zero setup, no bui
 
 ## ✦ Features
 
-- **1,849 sight words** across **55 phonics sound groups** — short vowels, digraphs, blends, and silent-e patterns
-- **3D typography** — clean, bevel-free 3D text with subtle drop shadows and warm gold emissive glow
+- **694 kid-relevant words** across **55 phonics sound groups** — short vowels, digraphs, blends, and silent-e patterns
+- **3D typography** — gently beveled, polished text with cinematic shadows, glassy word plates, and warm emissive glow
 - **Sound highlighting** — every word's target phonics pattern is rendered in coral red for visual mapping
 - **Progressive groups** — 4 words per sound family before moving to the next (e.g., 4 × `-at` → 4 × `-an` → 4 × `-ip` → ...)
-- **Cinematic 3D environment** — deep gradient starfield with twinkling stars, ambient particles, and subtle camera sway
+- **Cinematic 3D environment** — aurora gradients, a soft storybook planet, twinkling stars, ambient particles, and subtle camera sway
 - **Bloom post-processing** — soft glow that enhances without blurring letterforms
 - **Fullscreen mode** — press `F` or double-click
 - **No dependencies** — loads Three.js from CDN, everything runs in the browser
@@ -51,20 +51,20 @@ Open [`preview.html`](preview.html) in any modern browser — zero setup, no bui
 All words live in [`words.json`](words.json) and are organized by sound pattern:
 
 ```json
-{ "sound": "at",  "words": ["bat","cat","fat","hat","mat","pat","rat","sat","that","flat","brat","chat","spat","slat"] },
-{ "sound": "an",  "words": ["can","fan","man","pan","ran","tan","van","than","plan","bran","clan","scan","span"] },
-{ "sound": "sh",  "words": ["ship","shop","shut","fish","dish","wish","cash","rush","shell","shoe","shot","shed"...] },
-{ "sound": "a",   "words": ["bake","cake","date","gate","hate","lake","make","name","rake","sale","take"...] },
+{ "sound": "ap",  "words": ["app","tap","map","snap","clap","wrap","chapter"] },
+{ "sound": "ing", "words": ["gaming","coding","drawing","reading","building","sharing"] },
+{ "sound": "ck",  "words": ["click","snack","sticker","backpack","unlock"] },
+{ "sound": "o",   "words": ["home","code","robot","phone","video","emoji","remote"] },
 ```
 
 **Sound categories covered:**
 
 | Category | Groups | Examples |
 |---|---|---|
-| Short vowels | 26 | `-at`, `-an`, `-ip`, `-ot`, `-ug`, `-ell`, `-ing`… |
+| Short vowels | 26 | `-at`, `-an`, `-ip`, `-ug`, `-ell`, `-ing`, and kid-context words like `app`, `snap`, `gaming`… |
 | Digraphs | 5 | `sh`, `ch`, `th`, `wh`, `ck` |
 | Blends | 18 | `bl`, `br`, `cl`, `cr`, `dr`, `fl`, `fr`, `gr`, `pl`, `pr`, `sc`, `sk`, `sl`, `sm`, `sn`, `sp`, `st`, `sw`, `tr`, `tw` |
-| Long vowels (silent-e) | 4 | `a` (bake), `i` (kite), `o` (bone), `u` (cube) |
+| Long vowels (silent-e) | 4 | `a` (game), `i` (vibe), `o` (robot), `u` (music) |
 
 <br>
 

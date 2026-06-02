@@ -1,57 +1,971 @@
 [
-  { "sound": "at", "words": ["bat","cat","fat","hat","mat","pat","rat","sat","that","flat","brat","chat","spat","slat"] },
-  { "sound": "an", "words": ["can","fan","man","pan","ran","tan","van","than","plan","bran","clan","scan","span"] },
-  { "sound": "ad", "words": ["bad","dad","had","lad","mad","pad","sad","glad","clad","brad","grad"] },
-  { "sound": "ap", "words": ["cap","gap","lap","map","nap","rap","sap","tap","clap","snap","trap","slap","flap","wrap","chap"] },
-  { "sound": "ag", "words": ["bag","rag","sag","tag","wag","drag","flag","brag","snag","gag","shag"] },
-  { "sound": "am", "words": ["ham","jam","ram","yam","clam","slam","swam","gram","tram","spam","scam","wham"] },
-  { "sound": "ab", "words": ["cab","dab","jab","lab","nab","tab","crab","grab","blab","stab","slab"] },
-  { "sound": "ed", "words": ["bed","fed","led","red","wed","shed","sled","bred","fled","bled","pled","fled"] },
-  { "sound": "en", "words": ["den","hen","men","pen","ten","then","when","glen","wren","sten","ken"] },
-  { "sound": "et", "words": ["get","jet","let","met","net","pet","set","vet","wet","yet","fret","bet"] },
-  { "sound": "ell", "words": ["bell","fell","sell","tell","well","yell","shell","smell","spell","swell","dwell","quell","jell"] },
-  { "sound": "est", "words": ["best","nest","pest","rest","test","vest","west","chest","crest","quest","zest"] },
-  { "sound": "ig", "words": ["big","dig","fig","pig","rig","wig","twig","brig","trig","gig","jig"] },
-  { "sound": "in", "words": ["bin","fin","pin","tin","win","chin","grin","spin","thin","twin","skin","shin","whin","kin"] },
-  { "sound": "ip", "words": ["dip","lip","rip","sip","tip","zip","chip","clip","drip","flip","ship","skip","trip","slip","grip","snip","strip","whip"] },
-  { "sound": "it", "words": ["bit","fit","hit","kit","lit","pit","sit","wit","spit","grit","slit","flit","knit","quit"] },
-  { "sound": "ill", "words": ["bill","dill","fill","hill","jill","kill","mill","pill","sill","till","will","chill","drill","grill","spill","still","thrill","skill","quill","swill","frill"] },
-  { "sound": "ing", "words": ["ding","king","ring","sing","wing","bring","spring","sting","swing","thing","cling","fling","sling","wring","bling"] },
-  { "sound": "ot", "words": ["cot","dot","got","hot","lot","not","pot","rot","spot","trot","slot","blot","knot"] },
-  { "sound": "og", "words": ["dog","fog","hog","jog","log","frog","clog","smog","bog","flog"] },
-  { "sound": "op", "words": ["cop","hop","mop","pop","top","chop","drop","shop","stop","crop","flop","plop","bop","clop"] },
-  { "sound": "ub", "words": ["cub","hub","rub","sub","tub","club","grub","stub","snub","dub","scrub","chub"] },
-  { "sound": "ug", "words": ["bug","dug","hug","jug","lug","mug","rug","tug","plug","slug","snug","shrug","chug","drug"] },
-  { "sound": "un", "words": ["bun","fun","gun","nun","run","sun","spun","stun","shun","pun"] },
-  { "sound": "ut", "words": ["but","cut","hut","nut","rut","shut","strut","glut"] },
-  { "sound": "um", "words": ["gum","hum","mum","sum","drum","plum","thumb","glum","chum","scum","slum"] },
-  { "sound": "sh", "words": ["ship","shop","shut","fish","dish","wish","cash","rush","shell","shoe","shot","shed","shin","shock","shade","shine","shake","shape","share","shirt","shout","shave","shelf","shift","shine","shook","shore","short","shrub","shrug"] },
-  { "sound": "ch", "words": ["chat","chin","chip","chop","much","such","rich","bench","lunch","punch","chill","chunk","chest","chant","check","chick","chug","chum","cheese","chase","chair","chalk","champ","chant","charm","chart","cheek","cheer","chess","chew","chide","chief","child","chime","choir","choke","chore","chunk"] },
-  { "sound": "th", "words": ["that","them","then","this","with","bath","math","path","thick","thin","thing","think","thank","thump","thud","throb","throne","thrive","than","their","them","there","these"," thick","thief","thigh","thine","those","three","threw","throw","thumb"] },
-  { "sound": "wh", "words": ["what","when","where","which","while","white","why","whale","whip","wheel","whim","whirl","whisk","whiz","whack","wharf","wheat","wheel","whelp","where","which","whiff","while","whine","whirl","whisk","whist","white","whole"] },
-  { "sound": "ck", "words": ["back","duck","kick","lick","luck","neck","pack","pick","rock","sack","sick","sock","tack","tick","truck","black","brick","chick","clock","crack","stick","track","block","buck","cluck","crock","flock","frock","knock","shock","smack","snack","stack","stuck","thick","trick"," wick","wreck"] },
-  { "sound": "bl", "words": ["black","blade","blame","blank","blast","blaze","bleed","blend","bless","blind","blink","bliss","block","blond","blood","bloom","blow","blue","blur","blush","blimp","blot","bleak","bleep","blest","blimp","bliss","bloat","block","bloke","bloom","blown","blues","bluff","blunt","blurt","blush","blurt"] },
-  { "sound": "br", "words": ["brave","bread","break","brick","bride","brief","bright","bring","broke","brown","brush","brim","brand","brass","brat","braid","brain","brake","branch","brave","brawl","bray","breach","breast","breath","breed","breeze","brick","bride","bridge","brief","bright","brim","bring","brink","brisk","broad","broke","brook","broom","broth","brown","bruise","brush","brute"] },
-  { "sound": "cl", "words": ["clam","clap","class","clean","clear","cliff","climb","cling","clock","close","cloth","cloud","clown","club","clump","clash","clasp","claw","clay","click","clip","cloak","clog","clue","clang","clank","clash","clasp","clasp","clean","clear","cleat","cleft","clerk","click","cliff","climb","cling","clink","clip","cloak","clock","clod","clog","clone","close","cloth","cloud","clout","clown","cluck","clump","clung","clutch"] },
-  { "sound": "cr", "words": ["crab","crack","crash","crate","crawl","creek","creep","crisp","crop","cross","crow","crown","craft","cram","crane","crank","crash","cream","crest","cried","crime","crisp","croak","crush","crust","craze","creak","cream","creek","creep","crept","cress","crest","cried","crimp","crisp","croak","crock","croft","crone","crook","crops","cross","crows","crude","cruel","crumb","crush","crust","crypt"] },
-  { "sound": "dr", "words": ["drag","draw","dread","dream","dress","drew","drip","drive","drop","drum","drank","drift","drake","drape","drawl","dread","dream","dress","dried","drill","drink","drip","drive","drone","drove","drown","drums","drunk","draft","drain","drake","drama","drank","drape","dread","dream","dress","dried","drift","drill","drink","drip","drive","drone","drool","droop","drops","drove","drown","drums","drunk","dryer"] },
-  { "sound": "fl", "words": ["flag","flame","flash","flat","flea","fled","flew","flip","float","flock","flood","floor","flour","flow","flower","flute","fly","flake","flank","flare","flash","flask","flesh","flick","fling","flint","flirt","float","flock","flood","floor","flop","floss","flour","flow","fluff","fluid","flush","flute","flyer","flail","flair","flake","flame","flank","flare","flash","flask","flavor","flaw","flea","fled","fleece","fleet","flesh","flew","flick","flier","fling","flint","flirt","float","flock","flood","floor","flop","floss","flour","flow","flower","fluff","fluid","fluke","flung","flush","flute","flyer"] },
-  { "sound": "fr", "words": ["frame","free","fresh","frog","front","frost","frown","fruit","fry","frail","frank","free","fresh","fret","friar","friend","fright","frill","fringe","frisk","frog","front","frost","frown","froze","fruit","frump","frill","frock","frond","front","frost","froth","frown"," froze","fruit","frump","fryer"] },
-  { "sound": "gr", "words": ["grab","grace","grade","grand","grant","grape","graph","grass","grave","great","green","greet","grin","grip","groan","groom","gross","ground","group","grove","grow","grown","grain","grill","grind","grits","groan","grocer","groom","groove","gross","grouch","ground","group","grouse","grove","growl","grown","growth","grudge","grunt"] },
-  { "sound": "pl", "words": ["plan","plane","plant","plate","play","please","plenty","plum","plus","plump","pluck","plain","plank","plant","plate","play","plea","plead","please","pledge","plenty","pliers","plod","plot","plow","pluck","plug","plum","plume","plump","plunge","plunk","plus","plush","plank","plaza","plead","pleat","pledge","pluck","plumb","plume","plump","plunge","plural"] },
-  { "sound": "pr", "words": ["press","print","prize","proud","prove","prune","prank","prawn","pray","preach","price","pride","prim","prime","print","prior","prism","prize","probe","prompt","prone","proof","prop","proud","prove","prowl","prune","prowl","prude","prune","prank","prawn","pray","preen","press","price","pride","prim","prime","print","prior","prism","privy","prize","probe","prone","proof","prop"," prose","proud","prove","prowl","prune","pruned","pry"] },
-  { "sound": "sc", "words": ["scale","scan","scar","scare","scene","scoop","score","scout","scuff","scab","scald","scalp","scam","scan","scar","scare","scarf","scene","scent","scope","score","scorn","scour","scout","scowl","scram","scrap","screw","scrub","scuff","scald","scalp","scamp","scant","scare","scarf","scary","scent","scold","scoop","scope","score","scorn","scour","scout","scowl","scram","scrap","screw","scrub","scuff","scurf"] },
-  { "sound": "sk", "words": ["skate","skill","skin","skip","skirt","sky","skunk","sketch","ski","skid","skill","skim","skin","skip","skirt","skit","skull","skunk","sky","skate","skiff","skill","skimp","skin","skip","skirt","skit","skulk","skull","skunk","sky","skate","skiff","skill","skin","skip","skit","skull","skunk","sky"] },
-  { "sound": "sl", "words": ["slap","sleep","slice","slide","slim","slip","slit","slope","slow","slush","slam","slang","slash","slate","slave","sled","sleek","sleep","sleet","slice","slick","slid","slide","slim","slime","slip","slit","slope","slot","slow","slug","slum","slump","slush","slab","slack","slain","slake","slam","slang","slant","slap","slash","slate","slave","slaw","slay","sled","sleek","sleep","sleet","sleeve","slid","slime","sling","slip","slit","sliver","slob","slope","slot","slow","sludge","slug","slum","slump","slung","slush","sly"] },
-  { "sound": "sm", "words": ["small","smart","smell","smile","smoke","smooth","smack","smash","small","smart","smear","smell","smile","smirk","smoke","smooth","smudge","smock","smog","smoke","smoky","smolder","smooth","smudge","smug","smut"] },
-  { "sound": "sn", "words": ["snap","snail","snake","snow","snug","snip","snack","sniff","snag","snap","snare","snarl","snatch","sneak","sniff","snip","snob","snore","snort","snout","snow","snug","snack","snail","snake","snap","snare","snarl","snatch","sneak","sneer","sniff","snip","snob","snore","snort","snow","snub","snuff","snug"] },
-  { "sound": "sp", "words": ["space","spare","spark","speak","speed","spell","spend","spice","spill","spin","spine","spite","split","spot","spray","sprain","sprawl","spread","spring","sprint","spruce","spun","spunk","spur","spurt","spy","spade","spank","spare","spark","spasm","spawn","speak","spear","speck","speed","spell","spend","spice","spill","spin","spine","spire","spit","spite","splash","spoke","sponge","spook","spool","spoon","spore","sport","spot","spout","spray","spree","sprig","spring","sprint","spruce","sprung","spry","spud","spur","spurn","spurt","sputt","spy"] },
-  { "sound": "st", "words": ["stack","stage","stand","star","start","state","stay","step","stick","still","sting","stock","stone","stop","store","storm","story","stove","stump","stun","stain","stair","stale","stamp","stand","stare","start","state","stay","steal","steam","steel","steep","steer","stem","step","stern","stick","stiff","still","sting","stink","stir","stock","stole","stone","stood","stool","stoop","stop","store","storm","story","stove","straw","strip","stroll","strong","stuck","study","stuff","stump","stun","stung","stunt","style","stale","stash","stead","steak","steal","steam","steed","steel","steep","steer","stems","stench","steps","stern","stick","stiff","stills","sting","stink","stint","stir","stock","stoke","stole","stone","stood","stool","stoop","store","stork","storm","story","stout","stove","strap","straw","stray","strip","strut","stuck","stud","stump","stun","stung","stunk","stunt","sturdy","style"] },
-  { "sound": "sw", "words": ["swam","swap","sweet","swim","swing","switch","swish","swirl","swan","swap","swarm","sway","sweep","sweet","swell","swept","swift","swim","swing","swipe","swirl","swish","switch","swollen","swoop","swore","swum","swab","swag","swam","swamp","swan","swap","swarm","swat","sway","swear","sweat","sweep","sweet","swell","swept","swift","swim","swine","swing","swipe","swirl","swish","switch","swore","sworn","swum","swung"] },
-  { "sound": "tr", "words": ["track","trade","trail","train","trap","treat","tree","trick","trip","truck","trunk","trust","truth","trace","track","trade","trail","train","trait","tramp","trap","trash","tray","tread","treat","tree","trek","trial","tribe","trick","trip","trite","troop","trophy","trot","truck","true","truly","trump","trunk","trust","truth","try","trace","track","trade","trail","train","trait","tram","tramp","trap","trash","trauma","tray","tread","treat","tree","trek","tremor","trial","tribe","trick","trip","trite","troll","troop","trophy","trot","trout","truce","truck","true","truly","trump","trunk","trust","truth","trying"] },
-  { "sound": "tw", "words": ["twig","twin","twist","twitch","tweet","twelve","twenty","twice","twine","twirl","twist","twitch","tweed","tweet","twerk","twerp","twice","twig","twilight","twin","twine","twirl","twist","twitch","twitter","two"] },
-  { "sound": "a", "words": ["bake","cake","date","gate","hate","lake","make","name","rake","sale","take","tape","wave","blade","plane","skate","snake","space","flame","grape","plate","shade","shape","brave","came","game","gave","cave","fame","lane","race","safe","tale","wake","base","cape","dare","face","hare","late","mare","pace","rare","save","tame","vase","blaze","brace","crane","drape","flare","frame","glare","grade","grate","scale","share","spare","stale","state","trade","whale","chase","glaze","graze","shame","snare","spade","stage","stake","sway","trace","grade","shake","shave","slate","spare","stare","swape","taste","waste"] },
-  { "sound": "i", "words": ["bite","dime","dive","file","fine","hide","kite","like","line","mine","nice","ride","ripe","side","time","vine","wide","wife","bike","mile","pile","smile","spine","strike","while","shine","drive","bride","crime","dice","dine","fire","five","glide","grime","hive","life","lime","live","mile","pine","pipe","pride","prize","rice","size","slime","spike","tide","tile","wipe","wise","chime","climb","crime","price","quite","shrine","slide","spine","stride","swipe","thrive","twice","chide","glide","knife","slice","spite","trite","write","blike","bride","chime","drive","glide","pride","quite","shine","slide","spine","stride","swipe","thrive","trite","twice","whine","write"] },
-  { "sound": "o", "words": ["bone","cone","dome","hose","joke","note","pole","poke","rode","rope","rose","tone","vote","woke","broke","close","drove","globe","home","phone","smoke","stone","those","whole","choke","cope","dole","dose","grove","hole","lone","mole","nose","pose","robe","role","rove","sole","stole","stove","throne","bloke","chose","croak","drone","globe","grope","phone","prone","quote","scope","shore","slope","snore","spoke","store","swore","throne","wrote","choke","drove","globe","grope","phone","prone","scope","shore","slope","snore","spoke","store","swore","throne","wrote"] },
-  { "sound": "u", "words": ["cube","cute","mule","mute","fuse","huge","tube","tune","rule","use","flute","plume","crude","dune","flume","fume","fuse","glue","june","lure","prune","truce","brute","chute","cured","duke","flume","fumed","lunar","lured","mused","plume","prude","prune","puree","ruled","scuse","spume","truce","truly","tuned","usher","usurp","utile"] }
+  {
+    "sound": "at",
+    "words": [
+      "cat",
+      "hat",
+      "mat",
+      "bat",
+      "sat",
+      "chat",
+      "that",
+      "flat",
+      "splat",
+      "drat",
+      "brat",
+      "habitat",
+      "acrobat"
+    ]
+  },
+  {
+    "sound": "an",
+    "words": [
+      "can",
+      "fan",
+      "man",
+      "pan",
+      "ran",
+      "scan",
+      "plan",
+      "planet",
+      "banana",
+      "band",
+      "brand",
+      "dance",
+      "canvas",
+      "sandbox"
+    ]
+  },
+  {
+    "sound": "ad",
+    "words": [
+      "dad",
+      "bad",
+      "sad",
+      "glad",
+      "mad",
+      "pad",
+      "badge",
+      "notepad",
+      "adventure"
+    ]
+  },
+  {
+    "sound": "ap",
+    "words": [
+      "app",
+      "tap",
+      "map",
+      "cap",
+      "snap",
+      "clap",
+      "wrap",
+      "lap",
+      "gap",
+      "nap",
+      "grape",
+      "happy",
+      "chapter"
+    ]
+  },
+  {
+    "sound": "ag",
+    "words": [
+      "tag",
+      "bag",
+      "wag",
+      "flag",
+      "drag",
+      "snag",
+      "brag",
+      "magnet",
+      "lagoon",
+      "garage",
+      "package"
+    ]
+  },
+  {
+    "sound": "am",
+    "words": [
+      "ham",
+      "jam",
+      "ram",
+      "yam",
+      "slam",
+      "clam",
+      "team",
+      "dream",
+      "game",
+      "camera",
+      "family",
+      "camp",
+      "amaze",
+      "program"
+    ]
+  },
+  {
+    "sound": "ab",
+    "words": [
+      "cab",
+      "lab",
+      "grab",
+      "crab",
+      "stab",
+      "tablet",
+      "about",
+      "above",
+      "rabbit",
+      "cabin",
+      "label",
+      "habit",
+      "habitat"
+    ]
+  },
+  {
+    "sound": "ed",
+    "words": [
+      "bed",
+      "red",
+      "led",
+      "shed",
+      "sled",
+      "teddy",
+      "ended",
+      "helped",
+      "played",
+      "learned",
+      "edited",
+      "needed",
+      "seed",
+      "speed"
+    ]
+  },
+  {
+    "sound": "en",
+    "words": [
+      "pen",
+      "ten",
+      "hen",
+      "then",
+      "when",
+      "den",
+      "screen",
+      "friend",
+      "green",
+      "garden",
+      "seven",
+      "legend",
+      "energy",
+      "weekend"
+    ]
+  },
+  {
+    "sound": "et",
+    "words": [
+      "pet",
+      "net",
+      "get",
+      "yet",
+      "jet",
+      "wet",
+      "set",
+      "tablet",
+      "helmet",
+      "sketch",
+      "internet",
+      "pretzel",
+      "planet"
+    ]
+  },
+  {
+    "sound": "ell",
+    "words": [
+      "bell",
+      "tell",
+      "well",
+      "shell",
+      "smell",
+      "spell",
+      "jelly",
+      "hello",
+      "yellow",
+      "cell",
+      "spellbook",
+      "stellar",
+      "storyteller"
+    ]
+  },
+  {
+    "sound": "est",
+    "words": [
+      "best",
+      "nest",
+      "rest",
+      "test",
+      "west",
+      "quest",
+      "chest",
+      "forest",
+      "contest",
+      "honest",
+      "freshest",
+      "kindest",
+      "brightest"
+    ]
+  },
+  {
+    "sound": "ig",
+    "words": [
+      "big",
+      "dig",
+      "fig",
+      "pig",
+      "wig",
+      "giggle",
+      "signal",
+      "digital",
+      "origami",
+      "sprig"
+    ]
+  },
+  {
+    "sound": "in",
+    "words": [
+      "in",
+      "pin",
+      "win",
+      "spin",
+      "grin",
+      "skin",
+      "thin",
+      "kind",
+      "dino",
+      "ninja",
+      "minute",
+      "begin",
+      "coding",
+      "online"
+    ]
+  },
+  {
+    "sound": "ip",
+    "words": [
+      "sip",
+      "tip",
+      "dip",
+      "lip",
+      "ship",
+      "chip",
+      "skip",
+      "flip",
+      "trip",
+      "grip",
+      "slip",
+      "zip",
+      "zipper",
+      "friendship"
+    ]
+  },
+  {
+    "sound": "it",
+    "words": [
+      "it",
+      "sit",
+      "fit",
+      "hit",
+      "kit",
+      "bit",
+      "quit",
+      "visit",
+      "exit",
+      "spirit",
+      "digit",
+      "rabbit",
+      "outfit"
+    ]
+  },
+  {
+    "sound": "ill",
+    "words": [
+      "ill",
+      "hill",
+      "will",
+      "fill",
+      "spill",
+      "still",
+      "chill",
+      "drill",
+      "skill",
+      "grill",
+      "thrill",
+      "pillow",
+      "brilliant",
+      "vanilla"
+    ]
+  },
+  {
+    "sound": "ing",
+    "words": [
+      "sing",
+      "ring",
+      "king",
+      "wing",
+      "bring",
+      "thing",
+      "swing",
+      "string",
+      "gaming",
+      "coding",
+      "drawing",
+      "reading",
+      "building",
+      "sharing"
+    ]
+  },
+  {
+    "sound": "ot",
+    "words": [
+      "hot",
+      "not",
+      "pot",
+      "spot",
+      "plot",
+      "shot",
+      "cot",
+      "forgot",
+      "dot",
+      "hotspot",
+      "dotcom",
+      "potluck"
+    ]
+  },
+  {
+    "sound": "og",
+    "words": [
+      "dog",
+      "log",
+      "fog",
+      "frog",
+      "blog",
+      "cog",
+      "jog",
+      "hog",
+      "catalog",
+      "vlog",
+      "dialog",
+      "hotdog"
+    ]
+  },
+  {
+    "sound": "op",
+    "words": [
+      "top",
+      "hop",
+      "pop",
+      "shop",
+      "stop",
+      "drop",
+      "crop",
+      "opener",
+      "popcorn",
+      "lollipop",
+      "desktop",
+      "workshop"
+    ]
+  },
+  {
+    "sound": "ub",
+    "words": [
+      "cub",
+      "tub",
+      "rub",
+      "sub",
+      "club",
+      "hub",
+      "bubble",
+      "subway",
+      "scrub",
+      "stubborn"
+    ]
+  },
+  {
+    "sound": "ug",
+    "words": [
+      "bug",
+      "hug",
+      "mug",
+      "rug",
+      "plug",
+      "slug",
+      "dug",
+      "snug",
+      "juggle",
+      "nugget",
+      "debug",
+      "firebug"
+    ]
+  },
+  {
+    "sound": "un",
+    "words": [
+      "sun",
+      "fun",
+      "run",
+      "bun",
+      "unicorn",
+      "under",
+      "funny",
+      "runner",
+      "launch",
+      "lunch",
+      "bundle",
+      "community",
+      "unbox",
+      "sunshine"
+    ]
+  },
+  {
+    "sound": "ut",
+    "words": [
+      "cut",
+      "hut",
+      "shut",
+      "but",
+      "nut",
+      "butter",
+      "button",
+      "donut",
+      "cute",
+      "output",
+      "shortcut",
+      "peanut"
+    ]
+  },
+  {
+    "sound": "um",
+    "words": [
+      "hum",
+      "drum",
+      "gum",
+      "yum",
+      "plum",
+      "number",
+      "summer",
+      "costume",
+      "album",
+      "crumb",
+      "umbrella"
+    ]
+  },
+  {
+    "sound": "sh",
+    "words": [
+      "ship",
+      "shop",
+      "shell",
+      "shoe",
+      "shark",
+      "wish",
+      "dish",
+      "brush",
+      "share",
+      "shorts",
+      "shiny",
+      "friendship"
+    ]
+  },
+  {
+    "sound": "ch",
+    "words": [
+      "chat",
+      "chip",
+      "chair",
+      "cheer",
+      "coach",
+      "lunch",
+      "crunch",
+      "sketch",
+      "watch",
+      "chapter",
+      "check",
+      "choice",
+      "switch",
+      "match"
+    ]
+  },
+  {
+    "sound": "th",
+    "words": [
+      "this",
+      "that",
+      "then",
+      "think",
+      "thank",
+      "three",
+      "truth",
+      "bath",
+      "path",
+      "math",
+      "tooth",
+      "earth",
+      "thrive",
+      "weather"
+    ]
+  },
+  {
+    "sound": "wh",
+    "words": [
+      "when",
+      "what",
+      "which",
+      "whale",
+      "white",
+      "wheel",
+      "whisk",
+      "whisper",
+      "whiz",
+      "where",
+      "while",
+      "whirl"
+    ]
+  },
+  {
+    "sound": "ck",
+    "words": [
+      "back",
+      "pack",
+      "snack",
+      "stack",
+      "click",
+      "pick",
+      "kick",
+      "check",
+      "sticker",
+      "backpack",
+      "duck",
+      "block",
+      "unlock"
+    ]
+  },
+  {
+    "sound": "bl",
+    "words": [
+      "blue",
+      "black",
+      "block",
+      "blend",
+      "blink",
+      "blush",
+      "blanket",
+      "bubble",
+      "table",
+      "marble",
+      "bluebird",
+      "blossom"
+    ]
+  },
+  {
+    "sound": "br",
+    "words": [
+      "brave",
+      "brown",
+      "bread",
+      "brick",
+      "brush",
+      "brain",
+      "branch",
+      "break",
+      "brother",
+      "bright",
+      "bracelet",
+      "breeze",
+      "umbrella",
+      "library"
+    ]
+  },
+  {
+    "sound": "cl",
+    "words": [
+      "clap",
+      "class",
+      "clean",
+      "click",
+      "clock",
+      "cloud",
+      "climb",
+      "club",
+      "clue",
+      "clown",
+      "closet",
+      "clip",
+      "clover",
+      "classic"
+    ]
+  },
+  {
+    "sound": "cr",
+    "words": [
+      "crab",
+      "crayon",
+      "crawl",
+      "cream",
+      "crunch",
+      "craft",
+      "screen",
+      "microphone",
+      "minecraft",
+      "crystal",
+      "cross",
+      "cracker",
+      "create"
+    ]
+  },
+  {
+    "sound": "dr",
+    "words": [
+      "draw",
+      "dream",
+      "dress",
+      "drive",
+      "drum",
+      "drink",
+      "drift",
+      "drone",
+      "drop",
+      "bedroom",
+      "drawing"
+    ]
+  },
+  {
+    "sound": "fl",
+    "words": [
+      "flag",
+      "flat",
+      "flip",
+      "float",
+      "flower",
+      "flash",
+      "flight",
+      "flute",
+      "fluffy",
+      "floor",
+      "snowflake",
+      "butterfly",
+      "firefly"
+    ]
+  },
+  {
+    "sound": "fr",
+    "words": [
+      "frog",
+      "fresh",
+      "friend",
+      "freeze",
+      "fridge",
+      "frame",
+      "fruit",
+      "friday",
+      "frost",
+      "frisbee",
+      "friendly",
+      "freeplay"
+    ]
+  },
+  {
+    "sound": "gr",
+    "words": [
+      "green",
+      "grass",
+      "grape",
+      "grin",
+      "grow",
+      "group",
+      "grill",
+      "grace",
+      "upgrade",
+      "great",
+      "grocery"
+    ]
+  },
+  {
+    "sound": "pl",
+    "words": [
+      "play",
+      "plan",
+      "plant",
+      "plus",
+      "plum",
+      "plane",
+      "planet",
+      "plate",
+      "plush",
+      "plaza",
+      "splash",
+      "display",
+      "reply"
+    ]
+  },
+  {
+    "sound": "pr",
+    "words": [
+      "proud",
+      "prize",
+      "press",
+      "print",
+      "prank",
+      "practice",
+      "program",
+      "pretzel",
+      "preview",
+      "project",
+      "spring",
+      "surprise",
+      "proof",
+      "express"
+    ]
+  },
+  {
+    "sound": "sc",
+    "words": [
+      "scan",
+      "score",
+      "scout",
+      "screen",
+      "school",
+      "science",
+      "scooter",
+      "scarf",
+      "scary",
+      "rescue",
+      "disco",
+      "scope",
+      "scratch"
+    ]
+  },
+  {
+    "sound": "sk",
+    "words": [
+      "sky",
+      "skip",
+      "skate",
+      "sketch",
+      "skill",
+      "skin",
+      "skirt",
+      "basket",
+      "task",
+      "risk",
+      "skyscraper",
+      "asking",
+      "mask"
+    ]
+  },
+  {
+    "sound": "sl",
+    "words": [
+      "slime",
+      "slide",
+      "sleep",
+      "slow",
+      "sloth",
+      "slipper",
+      "slush",
+      "sleeve",
+      "slumber",
+      "slang",
+      "slalom"
+    ]
+  },
+  {
+    "sound": "sm",
+    "words": [
+      "smile",
+      "small",
+      "smart",
+      "smell",
+      "smoke",
+      "smooth",
+      "smash",
+      "smock",
+      "cosmic",
+      "dismount",
+      "smores",
+      "smartwatch"
+    ]
+  },
+  {
+    "sound": "sn",
+    "words": [
+      "snack",
+      "snap",
+      "snail",
+      "snow",
+      "sneeze",
+      "snuggle",
+      "sneaker",
+      "snake",
+      "sniff",
+      "snorkel"
+    ]
+  },
+  {
+    "sound": "sp",
+    "words": [
+      "space",
+      "spark",
+      "spoon",
+      "sport",
+      "speed",
+      "spell",
+      "spider",
+      "splash",
+      "speaker",
+      "special",
+      "spaceship",
+      "spirit",
+      "display",
+      "whisper"
+    ]
+  },
+  {
+    "sound": "st",
+    "words": [
+      "star",
+      "story",
+      "stop",
+      "stick",
+      "storm",
+      "street",
+      "studio",
+      "stage",
+      "sticker",
+      "stream",
+      "playlist",
+      "kindest",
+      "forest",
+      "quest"
+    ]
+  },
+  {
+    "sound": "sw",
+    "words": [
+      "swim",
+      "swing",
+      "switch",
+      "sweet",
+      "swift",
+      "swoop",
+      "swirl",
+      "sweater",
+      "swipe"
+    ]
+  },
+  {
+    "sound": "tr",
+    "words": [
+      "tree",
+      "train",
+      "treat",
+      "trip",
+      "truck",
+      "track",
+      "trade",
+      "trick",
+      "trophy",
+      "truth",
+      "stream",
+      "controller",
+      "trust"
+    ]
+  },
+  {
+    "sound": "tw",
+    "words": [
+      "two",
+      "twin",
+      "twist",
+      "twig",
+      "twelve",
+      "twirl",
+      "tweet",
+      "twinkle",
+      "between",
+      "software",
+      "artwork",
+      "twenty"
+    ]
+  },
+  {
+    "sound": "a",
+    "words": [
+      "game",
+      "make",
+      "name",
+      "cake",
+      "bake",
+      "safe",
+      "brave",
+      "space",
+      "skate",
+      "plane",
+      "tablet",
+      "favorite",
+      "avatar",
+      "playlist"
+    ]
+  },
+  {
+    "sound": "i",
+    "words": [
+      "bike",
+      "like",
+      "time",
+      "smile",
+      "shine",
+      "slide",
+      "drive",
+      "prize",
+      "vibe",
+      "kind",
+      "dino",
+      "wifi",
+      "device",
+      "online"
+    ]
+  },
+  {
+    "sound": "o",
+    "words": [
+      "home",
+      "hope",
+      "code",
+      "phone",
+      "globe",
+      "stone",
+      "joke",
+      "coach",
+      "video",
+      "emoji",
+      "remote",
+      "profile"
+    ]
+  },
+  {
+    "sound": "u",
+    "words": [
+      "cute",
+      "cube",
+      "music",
+      "use",
+      "tune",
+      "flute",
+      "huge",
+      "blue",
+      "unicorn",
+      "costume",
+      "student",
+      "future",
+      "include"
+    ]
+  }
 ]

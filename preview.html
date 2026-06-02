@@ -4,62 +4,91 @@
 <meta charset="utf-8">
 <title>✦ Glory Read ✦</title>
 <style>
-*{margin:0;padding:0}
-body{overflow:hidden;background:#080820;cursor:none}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%}
+body{
+  overflow:hidden;
+  background:#080820;
+  cursor:none;
+  font-family:Inter,ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;
+}
 canvas{display:block}
+
+#atmosphere{
+  position:fixed;inset:0;z-index:8;pointer-events:none;
+  background:
+    radial-gradient(circle at 18% 16%,rgba(94,234,212,.18),transparent 24%),
+    radial-gradient(circle at 78% 18%,rgba(251,113,133,.16),transparent 26%),
+    radial-gradient(circle at 50% 78%,rgba(251,191,36,.13),transparent 32%),
+    linear-gradient(135deg,rgba(8,8,32,.1),rgba(91,33,182,.14));
+  mix-blend-mode:screen;
+  animation:aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora{
+  from{filter:hue-rotate(0deg) saturate(1);transform:scale(1)}
+  to{filter:hue-rotate(18deg) saturate(1.22);transform:scale(1.04)}
+}
 
 #vignette{
   position:fixed;inset:0;
-  background:radial-gradient(ellipse at 50% 50%,transparent 50%,rgba(4,4,16,.5) 100%);
+  background:
+    radial-gradient(ellipse at 50% 48%,transparent 42%,rgba(2,6,23,.28) 68%,rgba(2,6,23,.74) 100%),
+    linear-gradient(to bottom,rgba(255,255,255,.03),transparent 24%,rgba(0,0,0,.18));
   z-index:9;pointer-events:none
 }
 
 #sound-label{
-  position:fixed;top:32px;left:50%;transform:translateX(-50%);
-  color:rgba(255,255,255,.4);
-  font:500 14px/1 system-ui,-apple-system,sans-serif;
-  letter-spacing:8px;text-transform:uppercase;
+  position:fixed;top:28px;left:50%;transform:translateX(-50%);
+  color:rgba(255,249,230,.9);
+  font:800 13px/1 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,sans-serif;
+  letter-spacing:7px;text-transform:uppercase;
   z-index:11;user-select:none;pointer-events:none;
-  transition:opacity .8s ease;
-  background:rgba(255,255,255,.04);
-  padding:8px 22px;border-radius:30px;
-  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)
+  transition:opacity .8s ease,transform .8s ease;
+  background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.045));
+  border:1px solid rgba(255,216,102,.24);
+  box-shadow:0 10px 35px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.18);
+  padding:10px 26px;border-radius:999px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  text-shadow:0 0 16px rgba(255,216,102,.38)
 }
 
 #progress{
   position:fixed;bottom:24px;right:28px;
-  color:rgba(255,255,255,.06);
-  font:11px/1 system-ui,sans-serif;
-  letter-spacing:2px;
+  color:rgba(255,255,255,.24);
+  font:700 11px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
+  letter-spacing:3px;
   z-index:11;user-select:none;pointer-events:none
 }
 
 #hint{
   position:fixed;bottom:24px;left:0;right:0;
   text-align:center;
-  color:rgba(255,216,102,.08);
-  font:11px/1.4 system-ui,sans-serif;
-  letter-spacing:3px;
+  color:rgba(255,249,230,.32);
+  font:750 11px/1.4 ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
+  letter-spacing:4px;text-transform:uppercase;
   z-index:11;user-select:none;pointer-events:none;
-  transition:opacity 2.5s ease
+  transition:opacity 2.5s ease;
+  text-shadow:0 0 18px rgba(255,216,102,.32)
 }
 
 #loading{
   position:fixed;inset:0;
   display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:10px;
-  color:rgba(255,216,102,.25);
-  font:12px/1.4 system-ui,sans-serif;
-  letter-spacing:6px;text-transform:uppercase;
+  flex-direction:column;gap:12px;
+  color:rgba(255,249,230,.58);
+  font:800 12px/1.4 ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
+  letter-spacing:7px;text-transform:uppercase;
   z-index:20;user-select:none;pointer-events:none;
-  transition:opacity 1.5s ease
+  transition:opacity 1.5s ease;
+  text-shadow:0 0 24px rgba(255,216,102,.48)
 }
-#loading span{font-size:24px;letter-spacing:10px}
+#loading span{font-size:30px;letter-spacing:10px;color:#ffd866}
 </style>
 </head>
 <body>
 
 <div id="loading"><span>✦</span>Loading</div>
+<div id="atmosphere"></div>
 <div id="vignette"></div>
 <div id="sound-label"></div>
 <div id="progress"></div>
@@ -93,28 +122,35 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.0;
+renderer.toneMappingExposure = 1.16;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
 
-// Gradient background (animated)
+// Gradient background (animated storybook-night palette)
 const bgCanvas = document.createElement('canvas');
-bgCanvas.width = 2; bgCanvas.height = 512;
+bgCanvas.width = 16; bgCanvas.height = 512;
 const bgCtx = bgCanvas.getContext('2d');
 const bgTex = new THREE.CanvasTexture(bgCanvas);
 scene.background = bgTex;
 
 function updateBackground(t) {
-  const s1 = Math.sin(t * 0.04) * 8;
-  const s2 = Math.sin(t * 0.03 + 1.5) * 6;
-  const s3 = Math.sin(t * 0.025 + 3) * 4;
-  const g = bgCtx.createLinearGradient(0, 0, 0, 512);
-  g.addColorStop(0, `rgb(${Math.round(8+s1)},${Math.round(8+s2*.3)},${Math.round(42+s2)})`);
-  g.addColorStop(.35, `rgb(${Math.round(18+s2)},${Math.round(8+s1*.3)},${Math.round(48+s3)})`);
-  g.addColorStop(.7, `rgb(${Math.round(26+s3)},${Math.round(6+s2*.3)},${Math.round(40+s1*.3)})`);
-  g.addColorStop(1, `rgb(${Math.round(34+s1*.3)},${Math.round(6)},${Math.round(32+s2*.3)})`);
-  bgCtx.fillStyle = g; bgCtx.fillRect(0, 0, 2, 512);
+  const s1 = Math.sin(t * 0.045) * 12;
+  const s2 = Math.sin(t * 0.033 + 1.5) * 10;
+  const s3 = Math.sin(t * 0.026 + 3) * 8;
+  const g = bgCtx.createLinearGradient(0, 0, 16, 512);
+  g.addColorStop(0, `rgb(${Math.round(4+s1*.15)},${Math.round(10+s2*.2)},${Math.round(46+s2)})`);
+  g.addColorStop(.28, `rgb(${Math.round(18+s2)},${Math.round(18+s1*.25)},${Math.round(72+s3)})`);
+  g.addColorStop(.58, `rgb(${Math.round(42+s3)},${Math.round(16+s2*.2)},${Math.round(70+s1*.25)})`);
+  g.addColorStop(.82, `rgb(${Math.round(10+s2*.35)},${Math.round(48+s3*.45)},${Math.round(70+s1*.2)})`);
+  g.addColorStop(1, `rgb(${Math.round(5+s1*.12)},${Math.round(8+s2*.15)},${Math.round(28+s3*.2)})`);
+  bgCtx.fillStyle = g; bgCtx.fillRect(0, 0, 16, 512);
+
+  const glow = bgCtx.createRadialGradient(8, 318 + Math.sin(t * .04) * 34, 10, 8, 330, 270);
+  glow.addColorStop(0, 'rgba(255,216,102,.25)');
+  glow.addColorStop(.35, 'rgba(94,234,212,.12)');
+  glow.addColorStop(1, 'rgba(255,255,255,0)');
+  bgCtx.fillStyle = glow; bgCtx.fillRect(0, 0, 16, 512);
   bgTex.needsUpdate = true;
 }
 
@@ -154,7 +190,7 @@ const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
 const bloom = new UnrealBloomPass(
   new THREE.Vector2(innerWidth, innerHeight),
-  .3, .5, .02
+  .46, .72, .01
 );
 composer.addPass(bloom);
 
@@ -203,8 +239,33 @@ scene.add(t1); scene.add(t2);
 scene.add(new THREE.AmbientLight(0xffeedd, .4));
 const key = new THREE.DirectionalLight(0xffffcc, .8);
 key.position.set(0, 4, 6); scene.add(key);
-const rim = new THREE.DirectionalLight(0xcc88ff, .2);
+const rim = new THREE.DirectionalLight(0xcc88ff, .28);
 rim.position.set(-4, -1, 3); scene.add(rim);
+const fill = new THREE.PointLight(0x5eead4, .42, 24);
+fill.position.set(3.8, -2.4, 5); scene.add(fill);
+
+// ─── Storybook Space Accents ─────────────────────────────
+const moonMat = new THREE.MeshStandardMaterial({
+  color: 0x20305f, emissive: 0x111a3f, emissiveIntensity: .35,
+  roughness: .9, metalness: 0,
+});
+const moon = new THREE.Mesh(new THREE.SphereGeometry(1.8, 48, 24), moonMat);
+moon.position.set(6.2, 2.2, -13); scene.add(moon);
+const ringMat = new THREE.MeshBasicMaterial({
+  color: 0xffd866, transparent: true, opacity: .14,
+  blending: THREE.AdditiveBlending, depthWrite: false,
+});
+const moonRing = new THREE.Mesh(new THREE.TorusGeometry(2.5, .025, 12, 140), ringMat);
+moonRing.position.copy(moon.position); moonRing.rotation.set(1.18, .18, -.42);
+scene.add(moonRing);
+
+const stageGlowMat = new THREE.MeshBasicMaterial({
+  color: 0x5eead4, transparent: true, opacity: .055,
+  blending: THREE.AdditiveBlending, depthWrite: false,
+  side: THREE.DoubleSide,
+});
+const stageGlow = new THREE.Mesh(new THREE.CircleGeometry(4.7, 96), stageGlowMat);
+stageGlow.position.set(0, -.15, -1.55); scene.add(stageGlow);
 
 // ─── Color Palette ────────────────────────────────────────
 const PALETTE = [
@@ -249,10 +310,15 @@ function disposeWord() {
     wg.traverse(c => {
       if (c.isMesh) {
         c.geometry?.dispose();
-        if (Array.isArray(c.material)) c.material.forEach(m => m.dispose());
-        else c.material?.dispose();
+        const materials = Array.isArray(c.material) ? c.material : [c.material];
+        materials.forEach(m => {
+          m?.map?.dispose();
+          m?.dispose();
+        });
       }
     });
+    wg.userData.plateTexture?.dispose();
+    wg.userData.plateTexture = null;
     wg = null;
   }
 }
@@ -275,17 +341,17 @@ function createWord(text, sound) {
     chars.forEach((ch, ci) => {
       const isHL = idx >= 0 && ci >= idx && ci < idx + sound.length;
       const mat = new THREE.MeshStandardMaterial({
-        color: isHL ? 0xff4b6e : groupColor[0],
-        emissive: isHL ? 0xff2244 : groupColor[1],
-        emissiveIntensity: isHL ? .25 : .2,
-        metalness: .05, roughness: .25, transparent: true, opacity: 0,
+        color: isHL ? 0xff5a7a : groupColor[0],
+        emissive: isHL ? 0xff2448 : groupColor[1],
+        emissiveIntensity: isHL ? .34 : .28,
+        metalness: .08, roughness: .18, transparent: true, opacity: 0,
       });
       mats.push(mat);
       if (isHL && !redMat) redMat = mat;
 
       const geo = new TextGeometry(ch, {
-        font, size: 2.8, height: .18, curveSegments: 4,
-        bevelEnabled: false,
+        font, size: 2.8, height: .22, curveSegments: 7,
+        bevelEnabled: true, bevelThickness: .015, bevelSize: .018, bevelSegments: 2,
       });
       geo.computeBoundingBox();
       const mesh = new THREE.Mesh(geo, mat);
@@ -293,13 +359,13 @@ function createWord(text, sound) {
       wg.add(mesh);
 
       const sm = new THREE.MeshBasicMaterial({
-        color: 0x000000, transparent: true, opacity: .2,
+        color: 0x020617, transparent: true, opacity: .26,
       });
       const sh = new THREE.Mesh(geo.clone(), sm);
       sh.position.copy(mesh.position);
-      sh.position.x += .04;
-      sh.position.y -= .04;
-      sh.position.z -= .12;
+      sh.position.x += .075;
+      sh.position.y -= .075;
+      sh.position.z -= .16;
       wg.add(sh);
       mats.push(sm);
 
@@ -316,8 +382,36 @@ function createWord(text, sound) {
       if (c.isMesh) { c.position.x -= hw; c.position.y -= hh; }
     });
 
+    const plateCanvas = document.createElement('canvas');
+    plateCanvas.width = 1024; plateCanvas.height = 256;
+    const px = plateCanvas.getContext('2d');
+    const pg = px.createLinearGradient(0, 0, 1024, 256);
+    pg.addColorStop(0, 'rgba(255,255,255,.06)');
+    pg.addColorStop(.5, 'rgba(255,216,102,.13)');
+    pg.addColorStop(1, 'rgba(94,234,212,.08)');
+    px.fillStyle = pg;
+    px.beginPath();
+    px.roundRect(28, 34, 968, 188, 82);
+    px.fill();
+    px.strokeStyle = 'rgba(255,255,255,.18)';
+    px.lineWidth = 4; px.stroke();
+    const plateTexture = new THREE.CanvasTexture(plateCanvas);
+    const plateMat = new THREE.MeshBasicMaterial({
+      map: plateTexture, transparent: true, opacity: 0,
+      blending: THREE.AdditiveBlending, depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+    const plate = new THREE.Mesh(
+      new THREE.PlaneGeometry(Math.max(5.8, xOff + .85), 1.65),
+      plateMat
+    );
+    plate.position.set(0, -.04, -.44);
+    wg.add(plate);
+    mats.push(plateMat);
+
     wg.userData.mats = mats;
     wg.userData.redMat = redMat;
+    wg.userData.plateTexture = plateTexture;
   }
 
   wg.position.set(0, 0, 0);
@@ -519,6 +613,12 @@ function animate() {
   // ── Nebula ──
   nebula.rotation.y = t * .012;
   nebula.material.opacity = .025 + Math.sin(t * .03 + 1) * .01;
+
+  // ── Storybook accents ──
+  moon.rotation.y = t * .035;
+  moonRing.rotation.z = -.42 + Math.sin(t * .08) * .045;
+  stageGlow.scale.setScalar(1 + Math.sin(t * .55) * .025);
+  stageGlow.material.opacity = .05 + Math.sin(t * .7) * .014;
 
   // ── Camera ──
   camera.position.x = Math.sin(t * .025) * .15;
