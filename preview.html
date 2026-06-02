@@ -68,6 +68,21 @@ canvas{display:block}
   text-shadow:0 0 24px rgba(255,216,102,.48)
 }
 #loading span{font-size:30px;letter-spacing:10px;color:#ffd866}
+
+#mode-btn{
+  position:fixed;bottom:24px;left:28px;z-index:12;
+  color:rgba(255,249,230,.5);
+  font:700 10px/1 ui-rounded,"SF Pro Rounded",system-ui,sans-serif;
+  letter-spacing:2px;text-transform:uppercase;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  padding:7px 16px;border-radius:20px;
+  cursor:pointer;user-select:none;
+  transition:all .4s ease;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  text-shadow:0 0 12px rgba(255,216,102,.25)
+}
+#mode-btn:hover{color:rgba(255,249,230,.8);background:rgba(255,255,255,.1);border-color:rgba(255,216,102,.35)}
 </style>
 </head>
 <body>
@@ -77,6 +92,7 @@ canvas{display:block}
 <div id="sound-label"></div>
 <div id="progress"></div>
 <div id="hint">tap for next word</div>
+<div id="mode-btn">✦ Story</div>
 
 <script>const __WORDS = [{"sound":"at","words":["cat","hat","mat","bat","sat","chat","that","flat","splat","drat","brat","habitat","acrobat"]},{"sound":"an","words":["can","fan","man","pan","ran","scan","plan","planet","banana","band","brand","dance","canvas","sandbox"]},{"sound":"ad","words":["dad","bad","sad","glad","mad","pad","badge","notepad"]},{"sound":"ap","words":["app","tap","map","cap","snap","clap","wrap","lap","gap","nap","grape","happy","chapter"]},{"sound":"ag","words":["tag","bag","wag","flag","drag","snag","brag","magnet","lagoon","garage","package"]},{"sound":"am","words":["ham","jam","ram","yam","slam","clam","team","dream","game","camera","family","camp","amaze","program"]},{"sound":"ab","words":["cab","lab","grab","crab","stab","tablet","about","above","rabbit","cabin","label","habit","habitat"]},{"sound":"ed","words":["bed","red","led","shed","sled","teddy","ended","helped","played","learned","edited","needed","seed","speed"]},{"sound":"en","words":["pen","ten","hen","then","when","den","screen","friend","green","garden","seven","legend","energy","weekend"]},{"sound":"et","words":["pet","net","get","yet","jet","wet","set","tablet","helmet","sketch","pretzel","planet"]},{"sound":"ell","words":["bell","tell","well","shell","smell","spell","jelly","hello","yellow","cell","stellar"]},{"sound":"est","words":["best","nest","rest","test","west","quest","chest","forest","contest","honest","kindest"]},{"sound":"ig","words":["big","dig","fig","pig","wig","giggle","signal","digital","origami","sprig"]},{"sound":"in","words":["in","pin","win","spin","grin","skin","thin","kind","dino","ninja","minute","begin","coding","online"]},{"sound":"ip","words":["sip","tip","dip","lip","ship","chip","skip","flip","trip","grip","slip","zip","zipper"]},{"sound":"it","words":["it","sit","fit","hit","kit","bit","quit","visit","exit","spirit","digit","rabbit","outfit"]},{"sound":"ill","words":["ill","hill","will","fill","spill","still","chill","drill","skill","grill","thrill","pillow","vanilla"]},{"sound":"ing","words":["sing","ring","king","wing","bring","thing","swing","string","gaming","coding","drawing","reading","sharing"]},{"sound":"ot","words":["hot","not","pot","spot","plot","shot","cot","forgot","dot","hotspot","dotcom","potluck"]},{"sound":"og","words":["dog","log","fog","frog","blog","cog","jog","hog","catalog","vlog","dialog","hotdog"]},{"sound":"op","words":["top","hop","pop","shop","stop","drop","crop","opener","popcorn","desktop"]},{"sound":"ub","words":["cub","tub","rub","sub","club","hub","bubble","subway","scrub"]},{"sound":"ug","words":["bug","hug","mug","rug","plug","slug","dug","snug","juggle","nugget","debug","firebug"]},{"sound":"un","words":["sun","fun","run","bun","unicorn","under","funny","runner","launch","lunch","bundle","unbox"]},{"sound":"ut","words":["cut","hut","shut","but","nut","butter","button","donut","cute","output","peanut"]},{"sound":"um","words":["hum","drum","gum","yum","plum","number","summer","costume","album","crumb"]},{"sound":"sh","words":["ship","shop","shell","shoe","shark","wish","dish","brush","share","shorts","shiny"]},{"sound":"ch","words":["chat","chip","chair","cheer","coach","lunch","crunch","sketch","watch","chapter","check","choice","switch","match"]},{"sound":"th","words":["this","that","then","think","thank","three","truth","bath","path","math","tooth","earth","thrive","weather"]},{"sound":"wh","words":["when","what","which","whale","white","wheel","whisk","whisper","whiz","where","while","whirl"]},{"sound":"ck","words":["back","pack","snack","stack","click","pick","kick","check","sticker","duck","block","unlock"]},{"sound":"bl","words":["blue","black","block","blend","blink","blush","blanket","bubble","table","marble","blossom"]},{"sound":"br","words":["brave","brown","bread","brick","brush","brain","branch","break","brother","bright","breeze","library"]},{"sound":"cl","words":["clap","class","clean","click","clock","cloud","climb","club","clue","clown","closet","clip","clover","classic"]},{"sound":"cr","words":["crab","crayon","crawl","cream","crunch","craft","screen","crystal","cross","cracker","create"]},{"sound":"dr","words":["draw","dream","dress","drive","drum","drink","drift","drone","drop","bedroom","drawing"]},{"sound":"fl","words":["flag","flat","flip","float","flower","flash","flight","flute","fluffy","floor","firefly"]},{"sound":"fr","words":["frog","fresh","friend","freeze","fridge","frame","fruit","friday","frost","frisbee"]},{"sound":"gr","words":["green","grass","grape","grin","grow","group","grill","grace","upgrade","great","grocery"]},{"sound":"pl","words":["play","plan","plant","plus","plum","plane","planet","plate","plush","plaza","splash","display","reply"]},{"sound":"pr","words":["proud","prize","press","print","prank","program","pretzel","preview","project","spring","proof","express"]},{"sound":"sc","words":["scan","score","scout","screen","school","science","scooter","scarf","scary","rescue","disco","scope","scratch"]},{"sound":"sk","words":["sky","skip","skate","sketch","skill","skin","skirt","basket","task","risk","asking","mask"]},{"sound":"sl","words":["slime","slide","sleep","slow","sloth","slipper","slush","sleeve","slumber","slang","slalom"]},{"sound":"sm","words":["smile","small","smart","smell","smoke","smooth","smash","smock","cosmic","smores"]},{"sound":"sn","words":["snack","snap","snail","snow","sneeze","snuggle","sneaker","snake","sniff","snorkel"]},{"sound":"sp","words":["space","spark","spoon","sport","speed","spell","spider","splash","speaker","special","spirit","display","whisper"]},{"sound":"st","words":["star","story","stop","stick","storm","street","studio","stage","sticker","stream","kindest","forest","quest"]},{"sound":"sw","words":["swim","swing","switch","sweet","swift","swoop","swirl","sweater","swipe"]},{"sound":"tr","words":["tree","train","treat","trip","truck","track","trade","trick","trophy","truth","stream","trust"]},{"sound":"tw","words":["two","twin","twist","twig","twelve","twirl","tweet","twinkle","between","artwork","twenty"]},{"sound":"a","words":["game","make","name","cake","bake","safe","brave","space","skate","plane","tablet","avatar"]},{"sound":"i","words":["bike","like","time","smile","shine","slide","drive","prize","vibe","kind","dino","wifi","device","online"]},{"sound":"o","words":["home","hope","code","phone","globe","stone","joke","coach","video","emoji","remote","profile"]},{"sound":"u","words":["cute","cube","music","use","tune","flute","huge","blue","unicorn","costume","student","future","include"]}];</script>
 
@@ -257,17 +273,40 @@ stageGlow.position.set(0, -.15, -1.55); scene.add(stageGlow);
 const PALETTE = [
   [0xf0bb30, 0xcc8800], // gold (warm)
   [0x38cca8, 0x0a7a6f], // teal (cool)
-  [0xee5566, 0xbb1133], // rose (warm)
+  [0xff8844, 0xcc5500], // orange (warm)
   [0x55b8ee, 0x026ba0], // sky blue (cool)
   [0xe8a020, 0xa86500], // amber (warm)
   [0xae9cf5, 0x6329cc], // violet (cool)
 ];
 let groupColor = PALETTE[0];
 
+// ─── Story Data ────────────────────────────────────────────
+const STORY_WORDS = [
+  "Glory", "built", "a", "rocket", "ship", "from", "cardboard", "boxes",
+  "and", "tape", "She", "climbed", "inside", "and", "counted", "down",
+  "Three", "two", "one", "blast", "off", "The", "rocket", "zoomed",
+  "past", "the", "moon", "and", "into", "a", "sea", "of", "twinkling",
+  "stars", "A", "friendly", "alien", "waved", "from", "a", "purple",
+  "planet", "Hello", "said", "the", "alien", "Do", "you", "want", "to",
+  "play", "Glory", "smiled", "and", "nodded", "They", "played", "hide",
+  "and", "seek", "among", "the", "craters", "and", "had", "a", "picnic",
+  "of", "moon", "cheese", "and", "star", "cookies", "When", "it", "was",
+  "time", "to", "go", "home", "the", "alien", "gave", "Glory", "a",
+  "glowing", "star", "as", "a", "gift", "Come", "back", "soon", "the",
+  "alien", "said", "Glory", "flew", "her", "rocket", "home", "and",
+  "climbed", "into", "bed", "holding", "her", "glowing", "star", "tight",
+  "What", "a", "wonderful", "adventure"
+];
+
+// ─── Mode ──────────────────────────────────────────────────
+let mode = 'phonics'; // 'phonics' | 'story'
+
 // ─── Word System ─────────────────────────────────────────
-const WPG = 4;
+let WPG = 4;
 const FI = 1.2, HOLD = 5, FO = 1.5, GAP = .5;
 const CYCLE = FI + HOLD + FO + GAP;
+const SFI = .2, SHOLD = .7, SFO = .2, SGAP = .05;
+const SCYCLE = SFI + SHOLD + SFO + SGAP;
 
 let wordData = [];
 let font = null;
@@ -316,7 +355,7 @@ function createWord(text, sound) {
   if (sl) sl.textContent = '✦ ' + sound + ' ✦';
 
   if (font) {
-    const idx = text.indexOf(sound);
+    const idx = mode === 'story' ? -1 : text.indexOf(sound);
     const chars = text.split('');
     const mats = [];
     let redMat = null, xOff = 0, maxY = 0, minY = 0;
@@ -325,9 +364,9 @@ function createWord(text, sound) {
     chars.forEach((ch, ci) => {
       const isHL = idx >= 0 && ci >= idx && ci < idx + sound.length;
       const mat = new THREE.MeshStandardMaterial({
-        color: isHL ? 0xee4455 : groupColor[0],
-        emissive: isHL ? 0xee1133 : groupColor[1],
-        emissiveIntensity: isHL ? .4 : .35,
+        color: isHL ? 0xee3355 : groupColor[0],
+        emissive: isHL ? 0xdd0022 : groupColor[1],
+        emissiveIntensity: isHL ? .55 : .25,
         metalness: .08, roughness: .18, transparent: true, opacity: 0,
       });
       mats.push(mat);
@@ -387,6 +426,27 @@ function advanceWord() {
   document.getElementById('progress').textContent =
     String((gi * WPG + wi) % total + 1).padStart(2, '0');
 }
+
+function toggleMode() {
+  disposeWord();
+  if (mode === 'phonics') {
+    mode = 'story';
+    WPG = STORY_WORDS.length;
+    wordData = [{sound: 'Story', words: STORY_WORDS}];
+    document.getElementById('mode-btn').textContent = '✦ Phonics';
+  } else {
+    mode = 'phonics';
+    WPG = 4;
+    wordData = shuffle([...__WORDS]);
+    document.getElementById('mode-btn').textContent = '✦ Story';
+  }
+  gi = 0;
+  pickGroup();
+  createWord(gw[0], wordData[gi].sound);
+  document.getElementById('progress').textContent = '01';
+}
+
+document.getElementById('mode-btn').addEventListener('click', toggleMode);
 
 window.addEventListener('click', advanceWord);
 window.addEventListener('touchstart', e => { e.preventDefault(); advanceWord(); });
@@ -491,22 +551,27 @@ function animate() {
 
   // ── Word ──
   if (wg && ready) {
+    const isSt = mode === 'story';
+    const cyc = isSt ? SCYCLE : CYCLE;
+    const fi = isSt ? SFI : FI;
+    const hold = isSt ? SHOLD : HOLD;
+    const fo = isSt ? SFO : FO;
     const el = now - ws;
-    const cp = el % CYCLE;
+    const cp = el % cyc;
     let op = 0, sc = 1, py = 0;
 
-    if (cp < FI) {
-      const p = cp / FI;
+    if (cp < fi) {
+      const p = cp / fi;
       op = eo(p);
       sc = eob(p);
       py = -.5 * (1 - eo(p));
-    } else if (cp < FI + HOLD) {
+    } else if (cp < fi + hold) {
       op = 1; sc = 1;
-      const ph = (cp - FI) / HOLD;
+      const ph = (cp - fi) / hold;
       py = Math.sin(ph * Math.PI) * .04;
-      wg.position.x = Math.sin((cp - FI) * 1.5) * .06;
-    } else if (cp < FI + HOLD + FO) {
-      const p = (cp - FI - HOLD) / FO;
+      wg.position.x = Math.sin((cp - fi) * 1.5) * .06;
+    } else if (cp < fi + hold + fo) {
+      const p = (cp - fi - hold) / fo;
       op = 1 - ei(p);
       sc = 1 - p * .05;
       py = .04 + p * .4;
@@ -524,22 +589,27 @@ function animate() {
     wg.scale.setScalar(sc);
 
     // Red pulse during hold
-    if (cp >= FI && cp < FI + HOLD && wg.userData.redMat) {
+    if (cp >= fi && cp < fi + hold && wg.userData.redMat) {
       wg.userData.redMat.emissiveIntensity =
-        .2 + Math.sin((cp - FI) * 1.8) * .08;
+        .2 + Math.sin((cp - fi) * 1.8) * .08;
     }
   }
 
   // ── Sound label ──
   if (wg && ready) {
+    const isSt = mode === 'story';
+    const cyc = isSt ? SCYCLE : CYCLE;
+    const fi = isSt ? SFI : FI;
+    const hold = isSt ? SHOLD : HOLD;
+    const fo = isSt ? SFO : FO;
     const el = now - ws;
-    const cp = el % CYCLE;
+    const cp = el % cyc;
     const sl = document.getElementById('sound-label');
     if (sl) {
-      if (cp < FI) sl.style.opacity = .3 + eo(cp / FI) * .7;
-      else if (cp < FI + HOLD) sl.style.opacity = 1;
-      else if (cp < FI + HOLD + FO) {
-        const p = (cp - FI - HOLD) / FO;
+      if (cp < fi) sl.style.opacity = .3 + eo(cp / fi) * .7;
+      else if (cp < fi + hold) sl.style.opacity = 1;
+      else if (cp < fi + hold + fo) {
+        const p = (cp - fi - hold) / fo;
         sl.style.opacity = 1 - ei(p) * .6;
       } else sl.style.opacity = 0;
     }
