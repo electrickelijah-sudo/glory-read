@@ -46,8 +46,7 @@
       "mad",
       "pad",
       "badge",
-      "notepad",
-      "adventure"
+      "notepad"
     ]
   },
   {
@@ -172,7 +171,6 @@
       "tablet",
       "helmet",
       "sketch",
-      "internet",
       "pretzel",
       "planet"
     ]
@@ -190,9 +188,7 @@
       "hello",
       "yellow",
       "cell",
-      "spellbook",
-      "stellar",
-      "storyteller"
+      "stellar"
     ]
   },
   {
@@ -208,9 +204,7 @@
       "forest",
       "contest",
       "honest",
-      "freshest",
-      "kindest",
-      "brightest"
+      "kindest"
     ]
   },
   {
@@ -262,8 +256,7 @@
       "grip",
       "slip",
       "zip",
-      "zipper",
-      "friendship"
+      "zipper"
     ]
   },
   {
@@ -299,7 +292,6 @@
       "grill",
       "thrill",
       "pillow",
-      "brilliant",
       "vanilla"
     ]
   },
@@ -318,7 +310,6 @@
       "coding",
       "drawing",
       "reading",
-      "building",
       "sharing"
     ]
   },
@@ -368,9 +359,7 @@
       "crop",
       "opener",
       "popcorn",
-      "lollipop",
-      "desktop",
-      "workshop"
+      "desktop"
     ]
   },
   {
@@ -384,8 +373,7 @@
       "hub",
       "bubble",
       "subway",
-      "scrub",
-      "stubborn"
+      "scrub"
     ]
   },
   {
@@ -419,9 +407,7 @@
       "launch",
       "lunch",
       "bundle",
-      "community",
-      "unbox",
-      "sunshine"
+      "unbox"
     ]
   },
   {
@@ -437,7 +423,6 @@
       "donut",
       "cute",
       "output",
-      "shortcut",
       "peanut"
     ]
   },
@@ -453,8 +438,7 @@
       "summer",
       "costume",
       "album",
-      "crumb",
-      "umbrella"
+      "crumb"
     ]
   },
   {
@@ -470,8 +454,7 @@
       "brush",
       "share",
       "shorts",
-      "shiny",
-      "friendship"
+      "shiny"
     ]
   },
   {
@@ -541,7 +524,6 @@
       "kick",
       "check",
       "sticker",
-      "backpack",
       "duck",
       "block",
       "unlock"
@@ -560,7 +542,6 @@
       "bubble",
       "table",
       "marble",
-      "bluebird",
       "blossom"
     ]
   },
@@ -577,9 +558,7 @@
       "break",
       "brother",
       "bright",
-      "bracelet",
       "breeze",
-      "umbrella",
       "library"
     ]
   },
@@ -612,8 +591,6 @@
       "crunch",
       "craft",
       "screen",
-      "microphone",
-      "minecraft",
       "crystal",
       "cross",
       "cracker",
@@ -649,8 +626,6 @@
       "flute",
       "fluffy",
       "floor",
-      "snowflake",
-      "butterfly",
       "firefly"
     ]
   },
@@ -666,9 +641,7 @@
       "fruit",
       "friday",
       "frost",
-      "frisbee",
-      "friendly",
-      "freeplay"
+      "frisbee"
     ]
   },
   {
@@ -713,13 +686,11 @@
       "press",
       "print",
       "prank",
-      "practice",
       "program",
       "pretzel",
       "preview",
       "project",
       "spring",
-      "surprise",
       "proof",
       "express"
     ]
@@ -755,7 +726,6 @@
       "basket",
       "task",
       "risk",
-      "skyscraper",
       "asking",
       "mask"
     ]
@@ -788,9 +758,7 @@
       "smash",
       "smock",
       "cosmic",
-      "dismount",
-      "smores",
-      "smartwatch"
+      "smores"
     ]
   },
   {
@@ -821,7 +789,6 @@
       "splash",
       "speaker",
       "special",
-      "spaceship",
       "spirit",
       "display",
       "whisper"
@@ -840,7 +807,6 @@
       "stage",
       "sticker",
       "stream",
-      "playlist",
       "kindest",
       "forest",
       "quest"
@@ -874,7 +840,6 @@
       "trophy",
       "truth",
       "stream",
-      "controller",
       "trust"
     ]
   },
@@ -890,7 +855,6 @@
       "tweet",
       "twinkle",
       "between",
-      "software",
       "artwork",
       "twenty"
     ]
@@ -909,9 +873,7 @@
       "skate",
       "plane",
       "tablet",
-      "favorite",
-      "avatar",
-      "playlist"
+      "avatar"
     ]
   },
   {

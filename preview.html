@@ -14,21 +14,6 @@ body{
 }
 canvas{display:block}
 
-#atmosphere{
-  position:fixed;inset:0;z-index:8;pointer-events:none;
-  background:
-    radial-gradient(circle at 18% 16%,rgba(94,234,212,.18),transparent 24%),
-    radial-gradient(circle at 78% 18%,rgba(251,113,133,.16),transparent 26%),
-    radial-gradient(circle at 50% 78%,rgba(251,191,36,.13),transparent 32%),
-    linear-gradient(135deg,rgba(8,8,32,.1),rgba(91,33,182,.14));
-  mix-blend-mode:screen;
-  animation:aurora 18s ease-in-out infinite alternate;
-}
-@keyframes aurora{
-  from{filter:hue-rotate(0deg) saturate(1);transform:scale(1)}
-  to{filter:hue-rotate(18deg) saturate(1.22);transform:scale(1.04)}
-}
-
 #vignette{
   position:fixed;inset:0;
   background:
@@ -88,11 +73,12 @@ canvas{display:block}
 <body>
 
 <div id="loading"><span>✦</span>Loading</div>
-<div id="atmosphere"></div>
 <div id="vignette"></div>
 <div id="sound-label"></div>
 <div id="progress"></div>
 <div id="hint">tap for next word</div>
+
+<script>const __WORDS = [{"sound":"at","words":["cat","hat","mat","bat","sat","chat","that","flat","splat","drat","brat","habitat","acrobat"]},{"sound":"an","words":["can","fan","man","pan","ran","scan","plan","planet","banana","band","brand","dance","canvas","sandbox"]},{"sound":"ad","words":["dad","bad","sad","glad","mad","pad","badge","notepad"]},{"sound":"ap","words":["app","tap","map","cap","snap","clap","wrap","lap","gap","nap","grape","happy","chapter"]},{"sound":"ag","words":["tag","bag","wag","flag","drag","snag","brag","magnet","lagoon","garage","package"]},{"sound":"am","words":["ham","jam","ram","yam","slam","clam","team","dream","game","camera","family","camp","amaze","program"]},{"sound":"ab","words":["cab","lab","grab","crab","stab","tablet","about","above","rabbit","cabin","label","habit","habitat"]},{"sound":"ed","words":["bed","red","led","shed","sled","teddy","ended","helped","played","learned","edited","needed","seed","speed"]},{"sound":"en","words":["pen","ten","hen","then","when","den","screen","friend","green","garden","seven","legend","energy","weekend"]},{"sound":"et","words":["pet","net","get","yet","jet","wet","set","tablet","helmet","sketch","pretzel","planet"]},{"sound":"ell","words":["bell","tell","well","shell","smell","spell","jelly","hello","yellow","cell","stellar"]},{"sound":"est","words":["best","nest","rest","test","west","quest","chest","forest","contest","honest","kindest"]},{"sound":"ig","words":["big","dig","fig","pig","wig","giggle","signal","digital","origami","sprig"]},{"sound":"in","words":["in","pin","win","spin","grin","skin","thin","kind","dino","ninja","minute","begin","coding","online"]},{"sound":"ip","words":["sip","tip","dip","lip","ship","chip","skip","flip","trip","grip","slip","zip","zipper"]},{"sound":"it","words":["it","sit","fit","hit","kit","bit","quit","visit","exit","spirit","digit","rabbit","outfit"]},{"sound":"ill","words":["ill","hill","will","fill","spill","still","chill","drill","skill","grill","thrill","pillow","vanilla"]},{"sound":"ing","words":["sing","ring","king","wing","bring","thing","swing","string","gaming","coding","drawing","reading","sharing"]},{"sound":"ot","words":["hot","not","pot","spot","plot","shot","cot","forgot","dot","hotspot","dotcom","potluck"]},{"sound":"og","words":["dog","log","fog","frog","blog","cog","jog","hog","catalog","vlog","dialog","hotdog"]},{"sound":"op","words":["top","hop","pop","shop","stop","drop","crop","opener","popcorn","desktop"]},{"sound":"ub","words":["cub","tub","rub","sub","club","hub","bubble","subway","scrub"]},{"sound":"ug","words":["bug","hug","mug","rug","plug","slug","dug","snug","juggle","nugget","debug","firebug"]},{"sound":"un","words":["sun","fun","run","bun","unicorn","under","funny","runner","launch","lunch","bundle","unbox"]},{"sound":"ut","words":["cut","hut","shut","but","nut","butter","button","donut","cute","output","peanut"]},{"sound":"um","words":["hum","drum","gum","yum","plum","number","summer","costume","album","crumb"]},{"sound":"sh","words":["ship","shop","shell","shoe","shark","wish","dish","brush","share","shorts","shiny"]},{"sound":"ch","words":["chat","chip","chair","cheer","coach","lunch","crunch","sketch","watch","chapter","check","choice","switch","match"]},{"sound":"th","words":["this","that","then","think","thank","three","truth","bath","path","math","tooth","earth","thrive","weather"]},{"sound":"wh","words":["when","what","which","whale","white","wheel","whisk","whisper","whiz","where","while","whirl"]},{"sound":"ck","words":["back","pack","snack","stack","click","pick","kick","check","sticker","duck","block","unlock"]},{"sound":"bl","words":["blue","black","block","blend","blink","blush","blanket","bubble","table","marble","blossom"]},{"sound":"br","words":["brave","brown","bread","brick","brush","brain","branch","break","brother","bright","breeze","library"]},{"sound":"cl","words":["clap","class","clean","click","clock","cloud","climb","club","clue","clown","closet","clip","clover","classic"]},{"sound":"cr","words":["crab","crayon","crawl","cream","crunch","craft","screen","crystal","cross","cracker","create"]},{"sound":"dr","words":["draw","dream","dress","drive","drum","drink","drift","drone","drop","bedroom","drawing"]},{"sound":"fl","words":["flag","flat","flip","float","flower","flash","flight","flute","fluffy","floor","firefly"]},{"sound":"fr","words":["frog","fresh","friend","freeze","fridge","frame","fruit","friday","frost","frisbee"]},{"sound":"gr","words":["green","grass","grape","grin","grow","group","grill","grace","upgrade","great","grocery"]},{"sound":"pl","words":["play","plan","plant","plus","plum","plane","planet","plate","plush","plaza","splash","display","reply"]},{"sound":"pr","words":["proud","prize","press","print","prank","program","pretzel","preview","project","spring","proof","express"]},{"sound":"sc","words":["scan","score","scout","screen","school","science","scooter","scarf","scary","rescue","disco","scope","scratch"]},{"sound":"sk","words":["sky","skip","skate","sketch","skill","skin","skirt","basket","task","risk","asking","mask"]},{"sound":"sl","words":["slime","slide","sleep","slow","sloth","slipper","slush","sleeve","slumber","slang","slalom"]},{"sound":"sm","words":["smile","small","smart","smell","smoke","smooth","smash","smock","cosmic","smores"]},{"sound":"sn","words":["snack","snap","snail","snow","sneeze","snuggle","sneaker","snake","sniff","snorkel"]},{"sound":"sp","words":["space","spark","spoon","sport","speed","spell","spider","splash","speaker","special","spirit","display","whisper"]},{"sound":"st","words":["star","story","stop","stick","storm","street","studio","stage","sticker","stream","kindest","forest","quest"]},{"sound":"sw","words":["swim","swing","switch","sweet","swift","swoop","swirl","sweater","swipe"]},{"sound":"tr","words":["tree","train","treat","trip","truck","track","trade","trick","trophy","truth","stream","trust"]},{"sound":"tw","words":["two","twin","twist","twig","twelve","twirl","tweet","twinkle","between","artwork","twenty"]},{"sound":"a","words":["game","make","name","cake","bake","safe","brave","space","skate","plane","tablet","avatar"]},{"sound":"i","words":["bike","like","time","smile","shine","slide","drive","prize","vibe","kind","dino","wifi","device","online"]},{"sound":"o","words":["home","hope","code","phone","globe","stone","joke","coach","video","emoji","remote","profile"]},{"sound":"u","words":["cute","cube","music","use","tune","flute","huge","blue","unicorn","costume","student","future","include"]}];</script>
 
 <script type="importmap">
 {
@@ -122,7 +108,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.16;
+renderer.toneMappingExposure = 0.9;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
 const scene = new THREE.Scene();
@@ -135,20 +121,20 @@ const bgTex = new THREE.CanvasTexture(bgCanvas);
 scene.background = bgTex;
 
 function updateBackground(t) {
-  const s1 = Math.sin(t * 0.045) * 12;
-  const s2 = Math.sin(t * 0.033 + 1.5) * 10;
-  const s3 = Math.sin(t * 0.026 + 3) * 8;
+  const s1 = Math.sin(t * 0.045) * 8;
+  const s2 = Math.sin(t * 0.033 + 1.5) * 6;
+  const s3 = Math.sin(t * 0.026 + 3) * 5;
   const g = bgCtx.createLinearGradient(0, 0, 16, 512);
-  g.addColorStop(0, `rgb(${Math.round(4+s1*.15)},${Math.round(10+s2*.2)},${Math.round(46+s2)})`);
-  g.addColorStop(.28, `rgb(${Math.round(18+s2)},${Math.round(18+s1*.25)},${Math.round(72+s3)})`);
-  g.addColorStop(.58, `rgb(${Math.round(42+s3)},${Math.round(16+s2*.2)},${Math.round(70+s1*.25)})`);
-  g.addColorStop(.82, `rgb(${Math.round(10+s2*.35)},${Math.round(48+s3*.45)},${Math.round(70+s1*.2)})`);
-  g.addColorStop(1, `rgb(${Math.round(5+s1*.12)},${Math.round(8+s2*.15)},${Math.round(28+s3*.2)})`);
+  g.addColorStop(0, `rgb(${Math.round(4+s1*.12)},${Math.round(8+s2*.15)},${Math.round(38+s2)})`);
+  g.addColorStop(.28, `rgb(${Math.round(12+s2*.8)},${Math.round(12+s1*.2)},${Math.round(58+s3*.8)})`);
+  g.addColorStop(.58, `rgb(${Math.round(28+s3*.6)},${Math.round(10+s2*.15)},${Math.round(55+s1*.2)})`);
+  g.addColorStop(.82, `rgb(${Math.round(8+s2*.25)},${Math.round(32+s3*.3)},${Math.round(55+s1*.15)})`);
+  g.addColorStop(1, `rgb(${Math.round(4+s1*.1)},${Math.round(6+s2*.1)},${Math.round(22+s3*.15)})`);
   bgCtx.fillStyle = g; bgCtx.fillRect(0, 0, 16, 512);
 
   const glow = bgCtx.createRadialGradient(8, 318 + Math.sin(t * .04) * 34, 10, 8, 330, 270);
-  glow.addColorStop(0, 'rgba(255,216,102,.25)');
-  glow.addColorStop(.35, 'rgba(94,234,212,.12)');
+  glow.addColorStop(0, 'rgba(255,216,102,.15)');
+  glow.addColorStop(.35, 'rgba(94,234,212,.08)');
   glow.addColorStop(1, 'rgba(255,255,255,0)');
   bgCtx.fillStyle = glow; bgCtx.fillRect(0, 0, 16, 512);
   bgTex.needsUpdate = true;
@@ -190,7 +176,7 @@ const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
 const bloom = new UnrealBloomPass(
   new THREE.Vector2(innerWidth, innerHeight),
-  .46, .72, .01
+  .35, .6, .015
 );
 composer.addPass(bloom);
 
@@ -269,12 +255,12 @@ stageGlow.position.set(0, -.15, -1.55); scene.add(stageGlow);
 
 // ─── Color Palette ────────────────────────────────────────
 const PALETTE = [
-  [0xffd866, 0xffaa22], // gold (warm)
-  [0x5eead4, 0x0d9488], // teal (cool)
-  [0xfb7185, 0xe11d48], // rose (warm)
-  [0x7dd3fc, 0x0284c7], // sky blue (cool)
-  [0xfbbf24, 0xd97706], // amber (warm)
-  [0xc4b5fd, 0x7c3aed], // violet (cool)
+  [0xf0bb30, 0xcc8800], // gold (warm)
+  [0x38cca8, 0x0a7a6f], // teal (cool)
+  [0xee5566, 0xbb1133], // rose (warm)
+  [0x55b8ee, 0x026ba0], // sky blue (cool)
+  [0xe8a020, 0xa86500], // amber (warm)
+  [0xae9cf5, 0x6329cc], // violet (cool)
 ];
 let groupColor = PALETTE[0];
 
@@ -317,8 +303,6 @@ function disposeWord() {
         });
       }
     });
-    wg.userData.plateTexture?.dispose();
-    wg.userData.plateTexture = null;
     wg = null;
   }
 }
@@ -341,9 +325,9 @@ function createWord(text, sound) {
     chars.forEach((ch, ci) => {
       const isHL = idx >= 0 && ci >= idx && ci < idx + sound.length;
       const mat = new THREE.MeshStandardMaterial({
-        color: isHL ? 0xff5a7a : groupColor[0],
-        emissive: isHL ? 0xff2448 : groupColor[1],
-        emissiveIntensity: isHL ? .34 : .28,
+        color: isHL ? 0xee4455 : groupColor[0],
+        emissive: isHL ? 0xee1133 : groupColor[1],
+        emissiveIntensity: isHL ? .4 : .35,
         metalness: .08, roughness: .18, transparent: true, opacity: 0,
       });
       mats.push(mat);
@@ -381,33 +365,6 @@ function createWord(text, sound) {
     wg.children.forEach(c => {
       if (c.isMesh) { c.position.x -= hw; c.position.y -= hh; }
     });
-
-    const plateCanvas = document.createElement('canvas');
-    plateCanvas.width = 1024; plateCanvas.height = 256;
-    const px = plateCanvas.getContext('2d');
-    const pg = px.createLinearGradient(0, 0, 1024, 256);
-    pg.addColorStop(0, 'rgba(255,255,255,.06)');
-    pg.addColorStop(.5, 'rgba(255,216,102,.13)');
-    pg.addColorStop(1, 'rgba(94,234,212,.08)');
-    px.fillStyle = pg;
-    px.beginPath();
-    px.roundRect(28, 34, 968, 188, 82);
-    px.fill();
-    px.strokeStyle = 'rgba(255,255,255,.18)';
-    px.lineWidth = 4; px.stroke();
-    const plateTexture = new THREE.CanvasTexture(plateCanvas);
-    const plateMat = new THREE.MeshBasicMaterial({
-      map: plateTexture, transparent: true, opacity: 0,
-      blending: THREE.AdditiveBlending, depthWrite: false,
-      side: THREE.DoubleSide,
-    });
-    const plate = new THREE.Mesh(
-      new THREE.PlaneGeometry(Math.max(5.8, xOff + .85), 1.65),
-      plateMat
-    );
-    plate.position.set(0, -.04, -.44);
-    wg.add(plate);
-    mats.push(plateMat);
 
     wg.userData.mats = mats;
     wg.userData.redMat = redMat;
@@ -447,13 +404,7 @@ function start() {
   document.getElementById('progress').textContent = '01';
 }
 
-fetch('words.json')
-  .then(r => r.json())
-  .then(d => { wordData = shuffle(d); dl = true; if (fl) start(); })
-  .catch(() => {
-    wordData = [{sound:'at',words:['bat','cat','hat','mat','rat','sat']}];
-    dl = true; if (fl) start();
-  });
+wordData = shuffle(__WORDS); dl = true; if (fl) start();
 
 new FontLoader().load(
   'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/fonts/helvetiker_bold.typeface.json',
@@ -617,8 +568,8 @@ function animate() {
   // ── Storybook accents ──
   moon.rotation.y = t * .035;
   moonRing.rotation.z = -.42 + Math.sin(t * .08) * .045;
-  stageGlow.scale.setScalar(1 + Math.sin(t * .55) * .025);
-  stageGlow.material.opacity = .05 + Math.sin(t * .7) * .014;
+  stageGlow.scale.setScalar(1 + Math.sin(t * .55) * .015);
+  stageGlow.material.opacity = .03 + Math.sin(t * .7) * .01;
 
   // ── Camera ──
   camera.position.x = Math.sin(t * .025) * .15;
